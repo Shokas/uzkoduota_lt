@@ -3,6 +3,8 @@
 
 #define RELAY_ON 0
 #define RELAY_OFF 1
+#define ALL_OFF 0xFFF
+#define ALL_ON 0x000
 
 // relays are active low
 BusOut magnet_relays(PH_1, PH_0, PC_15, PC_14);
@@ -18,6 +20,6 @@ void turnOff(uint8_t relay) {
 namespace magnets {
   void setup() {
     // turn off all relays
-    magnet_relays = 0xFFF;
+    magnet_relays = ALL_OFF;
   }
 }
