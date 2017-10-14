@@ -1,7 +1,7 @@
 #include "mbed.h"
-#include "MaskPuzzle.h"
 #include "puzzle.h"
 #include "MagnetService.h"
+#include "PaintingPuzzle.h"
 // #include "rtos.h"
 // #include "HCSR04.h"
 // #include "MFRC522.h"
@@ -44,14 +44,18 @@
 //magnets PH_1, PH_0, PC_15, PC_14
 //leds PB_7, PA_15, PA_14, PA_13
 
-Puzzle *new_puzzle = new MaskPuzzle();
+Puzzle *painting_puzzle = new PaintingPuzzle();
+//MotionSensorPuzzle
+//NfcPuzzle
+//DistanceSensorPuzzle
+//SafePuzzle
 
 int main() {
   printf("Hello Game");
-  magnets.allOff();
-  new_puzzle->activate();
+  magnets.turnOff(MAG1);  //activate trap door
+  painting_puzzle->activate();
   while(1) {
-    new_puzzle->solve();
-    wait(2.0);
+    painting_puzzle->solve();
+    __WFI();
   }
 }
