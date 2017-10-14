@@ -1,20 +1,29 @@
 #ifndef PUZZLE_H
 #define PUZZLE_H
 
+#include "mbed.h"
+
 struct Puzzle {
-  Puzzle() : activated(false), solved(false), hasCooldown(false) {};
+  Puzzle();
 
   void activate();
   void deactivate();
   bool isActive();
   bool isSolved();
-
-  virtual void solve();
+  bool coolingDown();
+  bool hasCooldown();
+  void startCooldown();
+  void endCooldown();
+  
+  virtual void solve() {};
+  
+  float cooldown;
 
 private:
   bool activated;
   bool solved;
-  bool hasCooldown;
+  bool inCooldown;
+  Timeout t;
 };
 
 #endif
