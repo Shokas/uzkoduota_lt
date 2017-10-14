@@ -8,13 +8,14 @@ DigitalIn reed_sense(PB_9);
 // open drawer when solved
 
 void PaintingPuzzle::activate() {
+  printf("Painting puzzle activated\r\n");
   activated = true;
 }
 
 void PaintingPuzzle::solve() {
   reed_power = 1;
   if(isActive() && !coolingDown()) {
-    printf("Painting puzzle started");
+    printf("Painting puzzle started\r\n");
     if(reed_sense == 0) {
       creepy_eyes = 0;
       startCooldown();

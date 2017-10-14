@@ -42,12 +42,18 @@ void blinky_ISR() {
 }
 
 int main() {
+  printf("Hello Game\r\n");
   led = 0;
   blinky.attach(&blinky_ISR, 1.0);
   magnets.turnOff(MAG1);  //activate trap door
   painting_puzzle->activate();
-  while(1) {
-    painting_puzzle->solve();
-    __WFI();
-  }
+  motion_sensor_puzzle->activate();
+
+  painting_puzzle->solve();
+  motion_sensor_puzzle->solve();
+  // while(1) {
+  //   painting_puzzle->solve();
+  //   motion_sensor_puzzle->solve();
+  //   __WFI();
+  // }
 }
