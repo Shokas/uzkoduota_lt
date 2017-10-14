@@ -2,6 +2,7 @@
 #include "puzzle.h"
 #include "MagnetService.h"
 #include "PaintingPuzzle.h"
+#include "MotionSensorPuzzle.h"
 // #include "rtos.h"
 // #include "HCSR04.h"
 // #include "MFRC522.h"
@@ -45,7 +46,7 @@
 //leds PB_7, PA_15, PA_14, PA_13
 
 Puzzle *painting_puzzle = new PaintingPuzzle();
-//MotionSensorPuzzle
+Puzzle *motion_sensor_puzzle = new MotionSensorPuzzle();
 //NfcPuzzle
 //DistanceSensorPuzzle
 //SafePuzzle
