@@ -3,7 +3,11 @@
 
 #include "puzzle.h"
 
-struct MaskPuzzle: public Puzzle {
+struct MaskPuzzle : public Puzzle {
+  MaskPuzzle() : Puzzle() {
+    cooldown = 300.0; //  in seconds
+  }
+
   virtual void solve();
 };
 
