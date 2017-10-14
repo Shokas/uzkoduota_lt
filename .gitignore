@@ -1,0 +1,7 @@
+BUILD
+BUILD/*
+BUILD/*.elf
+BUILD/*.bin
+BUILD/*.hex
+BUILD/*.o
+BUILD/*.d
