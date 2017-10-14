@@ -7,10 +7,6 @@ Puzzle::Puzzle() {
   cooldown = 0.0;
 }
 
-void Puzzle::activate() {
-  activated = true;
-}
-
 void Puzzle::deactivate() {
   activated = false;
 }

@@ -8,6 +8,7 @@ struct PaintingPuzzle : public Puzzle {
     cooldown = 120.0;
   }
 
+  virtual void activate();
   virtual void solve();
 };
 

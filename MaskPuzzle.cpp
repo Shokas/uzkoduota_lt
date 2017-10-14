@@ -14,6 +14,10 @@ void blinkPattern() {
   }
 }
 
+void MaskPuzzle::activate() {
+  activated = true;
+}
+
 void MaskPuzzle::solve() {
   if(isActive() && !coolingDown()) {
     printf("Mask Puzzle started");

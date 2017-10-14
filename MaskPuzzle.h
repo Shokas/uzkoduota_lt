@@ -8,6 +8,7 @@ struct MaskPuzzle : public Puzzle {
     cooldown = 300.0; //  in seconds
   }
 
+  virtual void activate();
   virtual void solve();
 };
 

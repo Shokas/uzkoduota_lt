@@ -6,7 +6,6 @@
 struct Puzzle {
   Puzzle();
 
-  void activate();
   void deactivate();
   bool isActive();
   bool isSolved();
@@ -15,12 +14,13 @@ struct Puzzle {
   void startCooldown();
   void endCooldown();
   
+  virtual void activate() {};
   virtual void solve() {};
   
   float cooldown;
-
-private:
   bool activated;
+  
+private:
   bool solved;
   bool inCooldown;
   Timeout t;
