@@ -4,9 +4,8 @@
 #include "PaintingPuzzle.h"
 #include "MotionSensorPuzzle.h"
 #include "NfcPuzzle.h"
+#include "DistanceSensorPuzzle.h"
 // #include "rtos.h"
-// #include "HCSR04.h"
-// #include "MFRC522.h"
 
 // #define BUFF_SIZE 128
 // #define DIST_UPDATE_INTERVAL 0.2
@@ -15,14 +14,6 @@
 DigitalOut led(D13);
 
 // InterruptIn bigButton(PB_13);//(USER_BUTTON); //USER_BUTTON == PC_13
-
-// //SRF05 sr(PC_1, PC_0);   // Trigger, Echo
-// HCSR04 sr(PC_1, PC_0);
-// //SRF05 sr2(PA_4, PB_0);  // Trigger, Echo
-// HCSR04 sr2(PC_8, PC_6);
-// //SRF05 sr3(PA_1, PA_0);  // Trigger, Echo
-// //HCSR04 sr3(PB_15, PB_14);       //PB_14, PB_13
-// MFRC522    RfChip   (PC_12, PC_11, PC_10, PD_2, PC_9);
 
 // Ticker distTick;
 Ticker blinky;
@@ -33,8 +24,9 @@ Ticker blinky;
 Serial pc(USBTX, USBRX);
 
 Puzzle *painting_puzzle = new PaintingPuzzle();
-Puzzle *motion_sensor_puzzle = new MotionSensorPuzzle();
+Puzzle *motion_puzzle = new MotionSensorPuzzle();
 Puzzle *nfc_puzzle = new NfcPuzzle();
+Puzzle *distance_puzzle = new DistanceSensorPuzzle();
 //DistanceSensorPuzzle
 //SafePuzzle
 
@@ -48,10 +40,12 @@ int main() {
   blinky.attach(&blinky_ISR, 1.0);
   magnets.turnOff(MAG1);  //activate trap door
   painting_puzzle->activate();
-  motion_sensor_puzzle->activate();
+  motion_puzzle->activate();
+  nfc_puzzle->activate();
+  distance_puzzle->activate();
 
   painting_puzzle->solve();
-  motion_sensor_puzzle->solve();
+  motion_puzzle->solve();
   // while(1) {
   //   painting_puzzle->solve();
   //   motion_sensor_puzzle->solve();
