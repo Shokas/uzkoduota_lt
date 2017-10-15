@@ -57,6 +57,7 @@ OBJECTS += MagnetService.o
 OBJECTS += MaskPuzzle.o
 OBJECTS += PaintingPuzzle.o
 OBJECTS += MotionSensorPuzzle.o
+OBJECTS += NfcPuzzle.o
 OBJECTS += mbed-rtos/rtos/Mutex.o
 OBJECTS += mbed-rtos/rtos/RtosTimer.o
 OBJECTS += mbed-rtos/rtos/Semaphore.o

@@ -3,6 +3,7 @@
 #include "MagnetService.h"
 #include "PaintingPuzzle.h"
 #include "MotionSensorPuzzle.h"
+#include "NfcPuzzle.h"
 // #include "rtos.h"
 // #include "HCSR04.h"
 // #include "MFRC522.h"
@@ -33,7 +34,7 @@ Serial pc(USBTX, USBRX);
 
 Puzzle *painting_puzzle = new PaintingPuzzle();
 Puzzle *motion_sensor_puzzle = new MotionSensorPuzzle();
-//NfcPuzzle
+Puzzle *nfc_puzzle = new NfcPuzzle();
 //DistanceSensorPuzzle
 //SafePuzzle
 
