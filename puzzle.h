@@ -2,13 +2,14 @@
 #define PUZZLE_H
 
 #include "mbed.h"
+#include <string>
 
 struct Puzzle {
   Puzzle();
 
   void deactivate();
   bool isActive();
-  bool isSolved();
+  void isSolved();
   bool coolingDown();
   bool hasCooldown();
   void startCooldown();
@@ -16,6 +17,7 @@ struct Puzzle {
   
   virtual void activate() {};
   virtual void solve() {};
+  std::string title;
   
   float cooldown;
   bool activated;
