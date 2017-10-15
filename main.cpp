@@ -7,10 +7,6 @@
 #include "DistanceSensorPuzzle.h"
 // #include "rtos.h"
 
-// #define BUFF_SIZE 128
-// #define DIST_UPDATE_INTERVAL 0.2
-// #define TESTMODE true
-
 DigitalOut led(D13);
 
 // InterruptIn bigButton(PB_13);//(USER_BUTTON); //USER_BUTTON == PC_13
@@ -27,7 +23,6 @@ Puzzle *painting_puzzle = new PaintingPuzzle();
 Puzzle *motion_puzzle = new MotionSensorPuzzle();
 Puzzle *nfc_puzzle = new NfcPuzzle();
 Puzzle *distance_puzzle = new DistanceSensorPuzzle();
-//DistanceSensorPuzzle
 //SafePuzzle
 
 void blinky_ISR() {
