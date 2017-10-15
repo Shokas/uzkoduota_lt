@@ -1,6 +1,6 @@
 #include "mbed.h"
 #include "puzzle.h"
-#include "MagnetService.h"
+#include "DrawerController.h"
 #include "PaintingPuzzle.h"
 #include "MotionSensorPuzzle.h"
 #include "NfcPuzzle.h"
