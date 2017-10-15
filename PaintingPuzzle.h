@@ -6,8 +6,10 @@
 struct PaintingPuzzle : public Puzzle {
   PaintingPuzzle() : Puzzle() {
     cooldown = 120.0;
+    title = "Painting puzzle";
   }
 
+  void reedSenseIsr();
   virtual void activate();
   virtual void solve();
 };
